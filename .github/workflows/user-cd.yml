@@ -47,7 +47,7 @@ jobs:
 
       # 파일 압축
       - name: Make zip file
-        run: zip -r ../../$GITHUB_SHA.zip .
+        run: zip -r user/build/libs/$GITHUB_SHA.zip .
         shell: bash
 
       - name: Configure AWS credentials
@@ -58,7 +58,7 @@ jobs:
           aws-region: ${{secrets.AWS_REGION}}
 
       - name: Upload to S3
-        run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://${{secrets.S3_BUCKET_NAME}}/$PROJECT_NAME/$GITHUB_SHA.zip
+        run: aws s3 cp --region ap-northeast-2 user/build/libs/$GITHUB_SHA.zip s3://${{secrets.S3_BUCKET_NAME}}/$PROJECT_NAME/$GITHUB_SHA.zip
 
       - name: Code Deploy
         run: |

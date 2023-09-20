@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/owner/owner.iml" filepath="$PROJECT_DIR$/owner/owner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/multi-module-codedeploy.common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/multi-module-codedeploy.common.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1474078702/multi-module-codedeploy.owner.main.iml" filepath="$PROJECT_DIR$/.idea/modules/1474078702/multi-module-codedeploy.owner.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1987388208/multi-module-codedeploy.user.main.iml" filepath="$PROJECT_DIR$/.idea/modules/1987388208/multi-module-codedeploy.user.main.iml" />
     </modules>
   </component>
 </project>
