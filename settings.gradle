@@ -1,0 +1,4 @@
+rootProject.name = 'multi-module-codedeploy'
+include 'common'
+include 'user'
+include 'owner'
