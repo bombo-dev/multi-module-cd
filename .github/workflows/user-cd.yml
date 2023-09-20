@@ -40,9 +40,14 @@ jobs:
         run: ./gradlew :user:clean :user:build
         shell: bash
 
-      # 해당 코드들을 압축
+      # 해당 디렉토리로 이동
+      - name: Change directory to build output
+        run: cd user/build/libs
+        shell: bash
+
+      # 파일 압축
       - name: Make zip file
-        run: zip -r ./$GITHUB_SHA.zip .
+        run: zip -r ../../$GITHUB_SHA.zip .
         shell: bash
 
       - name: Configure AWS credentials
