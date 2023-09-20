@@ -10,4 +10,8 @@ class CommonApplicationTests {
     void contextLoads() {
     }
 
+    @Test
+    void executeTest() {
+        System.out.println("Common이 정상적으로 실행되었습니다.");
+    }
 }
