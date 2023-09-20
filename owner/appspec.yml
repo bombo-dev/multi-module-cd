@@ -3,9 +3,9 @@ os: linux
 
 files:
   - source: /
-    destination: /home/owner/user # 인스턴스에서 파일이 저장될 위치
+    destination: /home/cd/owner # 인스턴스에서 파일이 저장될 위치
 permissions:
-  - object: /home/owner/user
+  - object: /home/cd/owner
     owner: ec2-user
     group: ec2-user
     mode: 755
