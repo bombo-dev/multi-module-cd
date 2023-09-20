@@ -40,9 +40,9 @@ jobs:
         run: ./gradlew :user:clean :user:build
         shell: bash
 
-      # 해당 디렉토리로 이동 후 파일 압축
-      - name: Change directory and make zip file
-        run: cd user/build/libs && zip -r ./$GITHUB_SHA.zip .
+      # 해당 코드들을 압축
+      - name: Make zip file
+        run: zip -r ./$GITHUB_SHA.zip .
         shell: bash
 
       - name: Configure AWS credentials
@@ -53,7 +53,7 @@ jobs:
           aws-region: ${{secrets.AWS_REGION}}
 
       - name: Upload to S3
-        run: aws s3 cp --region ap-northeast-2 user/build/libs/$GITHUB_SHA.zip s3://${{secrets.S3_BUCKET_NAME}}/$PROJECT_NAME/$GITHUB_SHA.zip
+        run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://${{secrets.S3_BUCKET_NAME}}/$PROJECT_NAME/$GITHUB_SHA.zip
 
       - name: Code Deploy
         run: |
